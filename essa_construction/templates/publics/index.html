@@ -1,0 +1,15 @@
+{% extends 'publics/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "ESSA Construction - Building the future" %}{% endblock %}
+
+{% block content %}
+    {% include 'publics/partials/hero.html' %}
+    {% include 'publics/partials/about.html' %}
+    {% include 'publics/partials/services.html' %}
+    {% include 'publics/partials/why.html' %}
+    {% include 'publics/partials/realisations.html' %}
+    {% include 'publics/partials/testimonials.html' %}
+    {% include 'publics/partials/process.html' %}
+    {% include 'publics/partials/contact.html' %}
+{% endblock %}

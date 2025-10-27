@@ -1,0 +1,66 @@
+{% load i18n %}
+<section id="services" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">{% trans "OUR SERVICES" %}</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">{% trans "Comprehensive solutions for all your construction projects, from masonry to finishing" %}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% comment %} Service cards can be managed in the view and passed as context for dynamic rendering {% endcomment %}
+            <div class="service-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl border-t-4 border-secondary">
+                <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-cube text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">{% trans "Masonry" %}</h3>
+                <p class="text-gray-600 mb-4">{% trans "Construction and renovation of masonry structures with high-quality materials." %}</p>
+                <a href="#" class="text-secondary font-medium flex items-center">{% trans "Learn more" %}<i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl border-t-4 border-secondary">
+                <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-truck text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">{% trans "Concrete Pouring" %}</h3>
+                <p class="text-gray-600 mb-4">{% trans "Professional concrete pouring services for foundations, slabs and load-bearing structures." %}</p>
+                <a href="#" class="text-secondary font-medium flex items-center">{% trans "Learn more" %}<i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl border-t-4 border-secondary">
+                <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-th text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">{% trans "Tiling" %}</h3>
+                <p class="text-gray-600 mb-4">{% trans "Interior and exterior tiling with impeccable, long-lasting finishes." %}</p>
+                <a href="#" class="text-secondary font-medium flex items-center">{% trans "Learn more" %}<i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl border-t-4 border-secondary">
+                <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-paint-roller text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">{% trans "Traditional Plaster" %}</h3>
+                <p class="text-gray-600 mb-4">{% trans "Application of traditional plasters for durable and aesthetic finishes." %}</p>
+                <a href="#" class="text-secondary font-medium flex items-center">{% trans "Learn more" %}<i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl border-t-4 border-secondary">
+                <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-home text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">{% trans "Finishing Works" %}</h3>
+                <p class="text-gray-600 mb-4">{% trans "Interior and exterior finishing works to perfect your project and add value." %}</p>
+                <a href="#" class="text-secondary font-medium flex items-center">{% trans "Learn more" %}<i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+
+            <div class="service-card bg-white rounded-xl shadow-md p-6 hover:shadow-xl border-t-4 border-secondary">
+                <div class="bg-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-tools text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3">{% trans "Renovation" %}</h3>
+                <p class="text-gray-600 mb-4">{% trans "Complete renovation of old and modern buildings respecting the existing architecture." %}</p>
+                <a href="#" class="text-secondary font-medium flex items-center">{% trans "Learn more" %}<i class="fas fa-arrow-right ml-2 text-sm"></i></a>
+            </div>
+        </div>
+    </div>
+</section>

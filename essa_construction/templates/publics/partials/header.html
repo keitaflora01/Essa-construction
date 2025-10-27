@@ -1,0 +1,41 @@
+{% load static i18n %}
+<header class="bg-primary fixed w-full top-0 z-50 shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <div class="flex items-center">
+                <img src="{% static 'images/image/IMG-20251024-WA0003.jpg' %}" alt="{% trans 'ESSA logo' %}" class="h-12 w-auto mr-3">
+                <div>
+                    <span class="text-white text-xl font-bold block">{% trans "ESSA" %}</span>
+                    <span class="text-secondary text-xs block">{% trans "CONSTRUCTION" %}</span>
+                </div>
+            </div>
+
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#accueil" class="text-white hover:text-secondary transition-colors font-medium">{% trans "Home" %}</a>
+                <a href="#apropos" class="text-white hover:text-secondary transition-colors font-medium">{% trans "About" %}</a>
+                <a href="#services" class="text-white hover:text-secondary transition-colors font-medium">{% trans "Services" %}</a>
+                <a href="#realisations" class="text-white hover:text-secondary transition-colors font-medium">{% trans "Projects" %}</a>
+                <a href="#contact" class="text-white hover:text-secondary transition-colors font-medium">{% trans "Contact" %}</a>
+                <a href="#devis" class="bg-secondary text-primary px-5 py-2 rounded font-bold hover:bg-yellow-400 transition-colors shadow-md">{% trans "Request a Quote" %}</a>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary py-4 px-4">
+            <a href="#accueil" class="block text-white py-3 hover:text-secondary border-b border-gray-700">{% trans "Home" %}</a>
+            <a href="#apropos" class="block text-white py-3 hover:text-secondary border-b border-gray-700">{% trans "About" %}</a>
+            <a href="#services" class="block text-white py-3 hover:text-secondary border-b border-gray-700">{% trans "Services" %}</a>
+            <a href="#realisations" class="block text-white py-3 hover:text-secondary border-b border-gray-700">{% trans "Projects" %}</a>
+            <a href="#contact" class="block text-white py-3 hover:text-secondary border-b border-gray-700">{% trans "Contact" %}</a>
+            <a href="#devis" class="block bg-secondary text-primary px-4 py-3 rounded font-bold mt-4 text-center">{% trans "Request a Quote" %}</a>
+        </div>
+    </nav>
+</header>

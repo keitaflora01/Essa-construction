@@ -1,0 +1,11 @@
+<!-- Hero Section -->
+<section id="hero" class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('{% static 'images/hero-bg.jpg' %}');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div id="hero-content" class="container mx-auto px-4 text-center text-white relative z-10">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">ESSA Construction</h1>
+        <p class="text-xl md:text-2xl mb-8">{% trans "Votre partenaire de confiance pour des projets de construction exceptionnels" %}</p>
+        <a href="#contact" class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full transition duration-300">
+            {% trans "Commencer un Projet" %}
+        </a>
+    </div>
+</section>

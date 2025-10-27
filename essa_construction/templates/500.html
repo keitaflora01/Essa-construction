@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error{% endblock title %}
+{% block content %}
+  <h1>Ooops!!! 500</h1>
+  <h3>Looks like something went wrong!</h3>
+  <p>
+    We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+  </p>
+{% endblock content %}
+
+-----------{% comment %} {% extends 'publics/home/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<!-- Loading Screen -->
+<div id="loading-screen" class="fixed inset-0 professional-section z-50 flex items-center justify-center">
+    <div class="text-center">
+        <div class="relative mb-8">
+            <div class="w-32 h-32 border-4 border-gray-700 rounded-full animate-spin">
+                <div class="absolute inset-0 border-4 border-transparent border-t-primary rounded-full animate-spin" style="animation-duration: 1.5s;"></div>
+                <div class="absolute inset-2 border-4 border-transparent border-b-secondary rounded-full animate-spin" style="animation-duration: 2s; animation-direction: reverse;"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <img src="{% static 'images/logo.png' %}" alt="ESSA Construction Logo" class="h-16 w-auto animate-pulse">
+            </div>
+        </div>
+        
+        <h2 class="text-3xl font-bold text-gradient mb-2">ESSA Construction</h2>
+        <p class="text-gray-400 text-lg">{% trans "Construire avec Excellence..." %}</p>
+        
+        <div class="flex justify-center mt-4 space-x-2">
+            <div class="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+            <div class="w-2 h-2 bg-primary rounded-full animate-bounce" style="animation-delay: 0.1s;"></div>
+            <div class="w-2 h-2 bg-primary rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
+        </div>
+    </div>
+</div>
+
+{% include 'publics/home/index_includes/_hero_section.html' %}
+{% include 'publics/home/index_includes/_about_section.html' %}
+{% include 'publics/home/index_includes/_service_section.html' %}
+{% include 'publics/home/index_includes/_project_section.html' %}
+{% include 'publics/home/index_includes/_why_choose_section.html' %}
+{% include 'publics/home/index_includes/_process_section.html' %}
+{% include 'publics/home/index_includes/_testimonial_section.html' %}
+{% include 'publics/home/index_includes/_contact_section.html' %}
+{% endblock %} {% endcomment %}
+

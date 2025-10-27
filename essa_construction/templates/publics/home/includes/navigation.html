@@ -1,0 +1,39 @@
+<!-- Navigation -->
+<nav class="py-4">
+    <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="text-white text-2xl font-bold flex items-center">
+            <img src="{% static 'images/logo.png' %}" alt="ESSA Construction Logo" class="h-12 w-auto mr-3">
+            <span>ESSA Construction</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-8">
+            <a href="#about" class="text-white hover:text-primary transition duration-300">{% trans "À Propos" %}</a>
+            <a href="#services" class="text-white hover:text-primary transition duration-300">{% trans "Services" %}</a>
+            <a href="#projects" class="text-white hover:text-primary transition duration-300">{% trans "Projets" %}</a>
+            <a href="#testimonials" class="text-white hover:text-primary transition duration-300">{% trans "Témoignages" %}</a>
+            <a href="#contact" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                {% trans "Contact" %}
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden mt-4">
+        <div class="flex flex-col space-y-4">
+            <a href="#about" class="text-white hover:text-primary transition duration-300">{% trans "À Propos" %}</a>
+            <a href="#services" class="text-white hover:text-primary transition duration-300">{% trans "Services" %}</a>
+            <a href="#projects" class="text-white hover:text-primary transition duration-300">{% trans "Projets" %}</a>
+            <a href="#testimonials" class="text-white hover:text-primary transition duration-300">{% trans "Témoignages" %}</a>
+            <a href="#contact" class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-6 rounded-full transition duration-300 text-center">
+                {% trans "Contact" %}
+            </a>
+        </div>
+    </div>
+</nav>

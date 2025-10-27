@@ -1,0 +1,55 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% trans "ESSA Construction - Building the future" %}{% endblock %}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f2537',
+                        secondary: '#ffc107',
+                        accent: '#1a3a52',
+                        dark: '#0a1929',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    {% block extra_head %}{% endblock %}
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(15, 37, 55, 0.85), rgba(15, 37, 55, 0.9)), url('{% static "images/image/construct2.jpeg" %}');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card { transition: all 0.3s ease; }
+        .service-card:hover { transform: translateY(-10px); }
+        .gallery-item { overflow: hidden; }
+        .gallery-item img { transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+    </style>
+</head>
+<body class="font-montserrat">
+    {% include 'publics/partials/header.html' %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'publics/partials/footer.html' %}
+    {% include 'publics/partials/scripts.html' %}
+</body>
+</html>

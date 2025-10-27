@@ -1,0 +1,58 @@
+{% load i18n static %}
+<footer class="bg-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <img src="{% static 'images/image/IMG-20251024-WA0003.jpg' %}" alt="{% trans 'ESSA logo' %}" class="h-10 w-auto mr-3">
+                    <div>
+                        <span class="text-white text-xl font-bold block">{% trans "ESSA" %}</span>
+                        <span class="text-secondary text-xs block">{% trans "CONSTRUCTION" %}</span>
+                    </div>
+                </div>
+                <p class="text-gray-400 mb-4">{% trans "Your trusted partner for all your construction and renovation projects." %}</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-secondary transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-secondary text-xl font-bold mb-4">{% trans "Quick links" %}</h3>
+                <ul class="space-y-2">
+                    <li><a href="#accueil" class="text-gray-400 hover:text-white transition-colors">{% trans "Home" %}</a></li>
+                    <li><a href="#apropos" class="text-gray-400 hover:text-white transition-colors">{% trans "About" %}</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">{% trans "Services" %}</a></li>
+                    <li><a href="#realisations" class="text-gray-400 hover:text-white transition-colors">{% trans "Projects" %}</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">{% trans "Contact" %}</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-secondary text-xl font-bold mb-4">{% trans "Our services" %}</h3>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">{% trans "Masonry" %}</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">{% trans "Concrete Pouring" %}</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">{% trans "Tiling" %}</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">{% trans "Traditional Plaster" %}</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">{% trans "Finishing Works" %}</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-secondary text-xl font-bold mb-4">{% trans "Contact" %}</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-center text-gray-400"><i class="fas fa-phone mr-3 text-secondary"></i>+237 6 XX XX XX XX</li>
+                    <li class="flex items-center text-gray-400"><i class="fas fa-envelope mr-3 text-secondary"></i>contact@essaconstruction.com</li>
+                    <li class="flex items-start text-gray-400"><i class="fas fa-map-marker-alt mr-3 mt-1 text-secondary"></i>{% trans "Bafoussam, Cameroon" %}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-800 text-center text-gray-400">
+            <p>&copy; {% now "Y" %} {% trans "ESSA Construction" %}. {% trans "All rights reserved." %}</p>
+        </div>
+    </div>
+</footer>

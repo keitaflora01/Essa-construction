@@ -1,0 +1,45 @@
+{% load i18n %}
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">{% trans "OUR PROCESS" %}</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">{% trans "How we work to deliver your construction projects" %}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            <div class="hidden md:block absolute top-12 left-0 right-0 h-1 bg-primary/20 z-0"></div>
+
+            <div class="text-center relative z-10">
+                <div class="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <span class="text-white font-bold text-2xl">1</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-2">{% trans "Consultation" %}</h3>
+                <p class="text-gray-600">{% trans "We listen to your needs and analyze your project to understand your expectations and goals." %}</p>
+            </div>
+
+            <div class="text-center relative z-10">
+                <div class="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <span class="text-white font-bold text-2xl">2</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-2">{% trans "Planning" %}</h3>
+                <p class="text-gray-600">{% trans "We develop a detailed plan with deadlines, a precise budget and a project timeline." %}</p>
+            </div>
+
+            <div class="text-center relative z-10">
+                <div class="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <span class="text-white font-bold text-2xl">3</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-2">{% trans "Execution" %}</h3>
+                <p class="text-gray-600">{% trans "Our qualified teams perform the work with precision and professionalism, adhering to standards." %}</p>
+            </div>
+
+            <div class="text-center relative z-10">
+                <div class="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <span class="text-white font-bold text-2xl">4</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-2">{% trans "Delivery" %}</h3>
+                <p class="text-gray-600">{% trans "We deliver the finalized project and ensure post-completion follow-up for your full satisfaction." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
