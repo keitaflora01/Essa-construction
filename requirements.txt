@@ -3,6 +3,7 @@ django-environ==0.12.0
 django-crispy-forms==2.4
 crispy-bootstrap5==2025.6
 django-allauth==65.12.1
+python-fido2==1.1.2  # Required for allauth MFA
 celery==5.5.3
 django-celery-beat==2.8.1
 redis==6.4.0
