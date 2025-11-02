@@ -25,7 +25,7 @@ if project_root not in sys.path:
 if essa_pkg not in sys.path:
 	sys.path.insert(0, essa_pkg)
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "essa_construction.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
 
 # Get WSGI application callable for servers/gateways to use
 application = get_wsgi_application()
