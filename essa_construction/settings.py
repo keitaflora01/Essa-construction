@@ -18,7 +18,7 @@ SECRET_KEY = 'django-insecure-your-secret-key-here'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'Essa-construction-7.onrender.com',
+    'Essa-construction-11.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
@@ -113,14 +113,22 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+# Dossier où collectstatic mettra les fichiers pour le déploiement
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'essa_construction', 'static')]
+# Pendant le développement, on peut avoir un dossier `static/` à la racine
+# et un dossier d'app `essa_construction/static` — inclure les deux.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'essa_construction', 'static'),
+]
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 ]
+# Use WhiteNoise's compressed manifest storage for efficient, cacheable files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files
 MEDIA_URL = 'media/'
