@@ -8,8 +8,8 @@ import os
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = [
-    'essa-construction-10.onrender.com',  # Your specific Render domain
-    '.onrender.com',  # All subdomains of onrender.com
+    'essa-construction-12.onrender.com',  
+    '.onrender.com',  
     'localhost',
     '127.0.0.1'
 ]
