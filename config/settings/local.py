@@ -7,7 +7,12 @@ from config.settings import *  # noqa: F403
 import os
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = ['*.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'essa-construction-10.onrender.com',  # Your specific Render domain
+    '.onrender.com',  # All subdomains of onrender.com
+    'localhost',
+    '127.0.0.1'
+]
 
 # Base de données
 DATABASES = {
