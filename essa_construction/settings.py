@@ -18,7 +18,7 @@ SECRET_KEY = 'django-insecure-your-secret-key-here'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'Essa-construction-3.onrender.com',
+    'Essa-construction-4.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
