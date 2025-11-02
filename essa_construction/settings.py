@@ -18,7 +18,7 @@ SECRET_KEY = 'django-insecure-your-secret-key-here'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'Essa-construction-11.onrender.com',
+    'Essa-construction-13.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'essa_construction.urls'
 
 TEMPLATES = [
     {
@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'essa_construction.wsgi.application'
 
 # Database
 DATABASES = {
@@ -131,7 +131,7 @@ STATICFILES_FINDERS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'essa_construction', 'media')
 
 # Default primary key field type
@@ -167,7 +167,6 @@ ACCOUNT_FORMS = {'signup': 'essa_construction.users.forms.UserSignupForm'}
 # Keep False by default; set to True via environment or if you want admin to use allauth
 DJANGO_ADMIN_FORCE_ALLAUTH = False
 
-# Admin URL - used by config.urls
 # Example: set to 'admin/' or change to a custom path for obscurity
 ADMIN_URL = 'admin/'
 

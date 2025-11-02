@@ -8,7 +8,7 @@ import os
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = [
-    'essa-construction-12.onrender.com',  
+    'essa-construction-13.onrender.com',  
     '.onrender.com',  
     'localhost',
     '127.0.0.1'
