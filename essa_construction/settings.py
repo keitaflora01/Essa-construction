@@ -12,13 +12,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-your-secret-key-here'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-your-secret-key-here')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = [
-    'essa-construction-17.onrender.com',
+    'essa-construction-18.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
@@ -79,14 +79,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'essa_construction.wsgi.application'
 
 # Database
+# Utilisez les variables d'environnement pour la production
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'essa_construction',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.environ.get('DATABASE_NAME', 'essa_construction'),
+        'USER': os.environ.get('DATABASE_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'root'),
+        'HOST': os.environ.get('DATABASE_HOST', 'localhost'),
+        'PORT': os.environ.get('DATABASE_PORT', '5432'),
     }
 }
 
@@ -114,28 +115,28 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-# Dossier où collectstatic mettra les fichiers pour le déploiement
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# Pendant le développement, on peut avoir un dossier `static/` à la racine
-# et un dossier d'app `essa_construction/static` — inclure les deux.
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'essa_construction', 'static'),
+]
 
-COMPRESS_ENABLED = True
-COMPRESS_URL = STATIC_URL
-COMPRESS_ROOT = STATIC_ROOT
-COMPRESS_OUTPUT_DIR = 'CACHE'
+# Django Compressor - DÉSACTIVÉ temporairement pour résoudre les erreurs
+COMPRESS_ENABLED = False
+COMPRESS_OFFLINE = False
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 ]
-# Use WhiteNoise's compressed manifest storage for efficient, cacheable files
+
+# WhiteNoise configuration
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'essa_construction', 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -167,7 +168,6 @@ ACCOUNT_ADAPTER = 'essa_construction.users.adapters.AccountAdapter'
 ACCOUNT_FORMS = {'signup': 'essa_construction.users.forms.UserSignupForm'}
 
 # Force the `admin` sign in process to go through the `django-allauth` workflow
-# Keep False by default; set to True via environment or if you want admin to use allauth
 DJANGO_ADMIN_FORCE_ALLAUTH = False
 
 # Example: set to 'admin/' or change to a custom path for obscurity
@@ -177,9 +177,18 @@ ADMIN_URL = 'admin/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'noreply@essa_construction.com'
 
-# Celery
+# Celery (désactivé temporairement si non utilisé)
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+
+# Security settings for production
+if not DEBUG:
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
