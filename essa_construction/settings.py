@@ -18,7 +18,7 @@ SECRET_KEY = 'django-insecure-your-secret-key-here'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'essa-construction-16.onrender.com',
+    'essa-construction-17.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
@@ -119,6 +119,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Pendant le développement, on peut avoir un dossier `static/` à la racine
 # et un dossier d'app `essa_construction/static` — inclure les deux.
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+COMPRESS_ENABLED = True
+COMPRESS_URL = STATIC_URL
+COMPRESS_ROOT = STATIC_ROOT
+COMPRESS_OUTPUT_DIR = 'CACHE'
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
