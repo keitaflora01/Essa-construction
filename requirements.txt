@@ -1,8 +1,8 @@
-django==5.2.7
+django==5.2.8
 django-environ==0.12.0
 django-crispy-forms==2.4
 crispy-bootstrap5==2025.6
-django-allauth==65.12.1
+django-allauth==65.13.0
 # WebAuthn dependency (package name on PyPI is `fido2`)
 fido2>=1.1.3
 celery==5.5.3
@@ -12,7 +12,7 @@ django-redis==6.0.0
 whitenoise==6.11.0
 django-compressor==4.5.1
 pillow==12.0.0
-psycopg[c]==3.2.11
+psycopg[c]==3.2.12
 gunicorn==23.0.0
 python-slugify==8.0.4
 django-model-utils==5.0.0
